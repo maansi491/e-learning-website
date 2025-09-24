@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AEnexz Tech — Prototype</title>
+
+  <!-- Bootstrap 5 CSS (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Optional: icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="ModernE-learningPlatform.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">AEnexz Tech</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMain">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="#courses">Courses</a></li>
+          <li class="nav-item"><a class="nav-link" href="#instructor">Instructor</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item ms-2">
+            <button class="btn btn-light text-primary" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="bg-light py-5">
+    <div class="container text-center">
+      <h1 class="display-5 fw-bold">AEnexz Tech — Modern E-Learning</h1>
+      <p class="lead mb-4">Responsive, interactive courses for learners & creators. Built with HTML, CSS, JS & Bootstrap.</p>
+      <a href="#courses" class="btn btn-primary btn-lg me-2">Browse Courses</a>
+      <a href="#instructor" class="btn btn-outline-primary btn-lg">Apply as Instructor</a>
+    </div>
+  </header>
+
+  <!-- FEATURES -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4 text-center">
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm p-3">
+            <div class="card-body">
+              <i class="bi bi-phone display-6 text-primary"></i>
+              <h5 class="card-title mt-3">Responsive</h5>
+              <p class="card-text">Mobile-first design using Bootstrap; looks great on any device.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm p-3">
+            <div class="card-body">
+              <i class="bi bi-play-btn display-6 text-primary"></i>
+              <h5 class="card-title mt-3">Interactive Lessons</h5>
+              <p class="card-text">Video lessons, quizzes and progress tracking (prototype).</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm p-3">
+            <div class="card-body">
+              <i class="bi bi-people display-6 text-primary"></i>
+              <h5 class="card-title mt-3">Instructor Tools</h5>
+              <p class="card-text">Apply, submit courses and manage content (future backend integration).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COURSES -->
+  <section id="courses" class="py-5 bg-white">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="h4 mb-0">Our Courses</h2>
+        <div>
+          <input id="searchInput" class="form-control form-control-sm" style="min-width:220px" placeholder="Search course...">
+        </div>
+      </div>
+
+      <div id="coursesRow" class="row g-4">
+        <!-- Course cards will be rendered here by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTRUCTOR APPLY -->
+  <section id="instructor" class="py-5 bg-light">
+    <div class="container">
+      <h3>Become an Instructor</h3>
+      <p>Share your knowledge — submit your application below.</p>
+
+      <form id="instructorForm" class="row g-3 needs-validation" novalidate>
+        <div class="col-md-6">
+          <label class="form-label">Full name</label>
+          <input type="text" class="form-control" id="instName" required>
+          <div class="invalid-feedback">Name is required.</div>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-control" id="instEmail" required>
+          <div class="invalid-feedback">Valid email is required.</div>
+        </div>
+        <div class="col-12">
+          <label class="form-label">Short Bio</label>
+          <textarea class="form-control" id="instBio" rows="3"></textarea>
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-success">Apply</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-5">
+    <div class="container">
+      <h3>Contact & Support</h3>
+      <form id="contactForm" class="row g-3 needs-validation" novalidate>
+        <div class="col-md-6">
+          <label class="form-label">Name</label>
+          <input type="text" class="form-control" id="contactName" required>
+          <div class="invalid-feedback">Required.</div>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-control" id="contactEmail" required>
+          <div class="invalid-feedback">Enter valid email.</div>
+        </div>
+        <div class="col-12">
+          <label class="form-label">Message</label>
+          <textarea class="form-control" id="contactMsg" rows="4"></textarea>
+        </div>
+        <div class="col-12">
+          <button class="btn btn-primary" type="submit">Send Message</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark text-light py-4">
+    <div class="container text-center small">
+      &copy; 2025 AEnexz Tech • Built with HTML, CSS, JS & Bootstrap
+    </div>
+  </footer>
+
+  <!-- LOGIN MODAL -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <form id="loginForm" class="p-3 needs-validation" novalidate>
+          <div class="modal-header">
+            <h5 class="modal-title">Login</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label class="form-label">Email</label>
+              <input type="email" id="loginEmail" class="form-control" required>
+              <div class="invalid-feedback">Enter email</div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Password</label>
+              <input type="password" id="loginPassword" class="form-control" required minlength="6">
+              <div class="invalid-feedback">Password (min 6 chars)</div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-primary" type="submit">Login</button>
+            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- COURSE DETAILS MODAL (reused) -->
+  <div class="modal fade" id="courseModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 id="courseModalTitle" class="modal-title">Course</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p id="courseModalDesc">Details here...</p>
+          <div id="courseModalContent"></div>
+        </div>
+        <div class="modal-footer">
+          <button id="enrollBtn" class="btn btn-success">Enroll</button>
+          <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS bundle -->
+  <script src="ModernE-learningPlatform.js"></script>
+
+  <!-- App JS -->
+  <script src="js/script.js"></script>
+</body>
+</html>
