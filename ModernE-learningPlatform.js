@@ -100,7 +100,7 @@ function enrollCourse(id){
   }
   enrolled.push(id);
   localStorage.setItem('aenexz_enrolled', JSON.stringify(enrolled));
-  alert('✅ Enrolled! Course added to your dashboard (local demo).');
+  alert(' Enrolled! Course added to your dashboard (local demo).');
 }
 
 // enroll button in modal
@@ -124,11 +124,11 @@ document.getElementById('enrollBtn').addEventListener('click', (e) => {
         // handle specific forms
         if(form.id === 'instructorForm'){
           event.preventDefault();
-          alert('✅ Application received (demo). We will contact you via email.');
+          alert('Application received (demo). We will contact you via email.');
           form.reset();
         } else if(form.id === 'contactForm'){
           event.preventDefault();
-          alert('✅ Message sent (demo). Thank you!');
+          alert(' Message sent (demo). Thank you!');
           form.reset();
         } else if(form.id === 'loginForm'){
           event.preventDefault();
